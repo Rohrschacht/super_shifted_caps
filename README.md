@@ -55,15 +55,15 @@ shortcuts that way.
       ```
 
    2. Your file should look something like this:
-```
-xkb_keymap {
-        xkb_keycodes  { include "evdev+aliases(qwerty)" };
-        xkb_types     { include "complete"      };
-        xkb_compat    { include "complete"      };
-        xkb_symbols   { include "pc+us(altgr-intl)+inet(evdev)+customcaps(super_shifted_capslock)"  };
-        xkb_geometry  { include "pc(pc105)"     };
-};
-```
+      ```
+      xkb_keymap {
+              xkb_keycodes  { include "evdev+aliases(qwerty)" };
+              xkb_types     { include "complete"      };
+              xkb_compat    { include "complete"      };
+              xkb_symbols   { include "pc+us(altgr-intl)+inet(evdev)+customcaps(super_shifted_capslock)"  };
+              xkb_geometry  { include "pc(pc105)"     };
+      };
+      ```
    3. Load this xkbmap: `xkbcomp caps.xkb $DISPLAY`
 
 You can load this xkbmap automatically after your X session started using the
