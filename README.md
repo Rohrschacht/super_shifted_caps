@@ -51,11 +51,11 @@ shortcuts that way.
    1. Print your current xkbmap, add the custom symbol to the xkb_symbols line,
       and save it to a file like this:
       ```
-setxkbmap -print | sed '/xkb_symbols/ {s/"/+customcaps(super_shifted_capslock)"/2 }' > caps.xkb
+      setxkbmap -print | sed '/xkb_symbols/ {s/"/+customcaps(super_shifted_capslock)"/2 }' > caps.xkb
       ```
 
    2. Your file should look something like this:
-      ```
+```
 xkb_keymap {
         xkb_keycodes  { include "evdev+aliases(qwerty)" };
         xkb_types     { include "complete"      };
@@ -63,7 +63,7 @@ xkb_keymap {
         xkb_symbols   { include "pc+us(altgr-intl)+inet(evdev)+customcaps(super_shifted_capslock)"  };
         xkb_geometry  { include "pc(pc105)"     };
 };
-      ```
+```
    3. Load this xkbmap: `xkbcomp caps.xkb $DISPLAY`
 
 You can load this xkbmap automatically after your X session started using the
