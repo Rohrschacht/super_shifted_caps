@@ -1,0 +1,10 @@
+hidden partial modifier_keys
+xkb_symbols "super_shifted_capslock" {
+    key <CAPS> {
+        type[Group1] = "TWO_LEVEL",
+        symbols[Group1] = [ Super_L, Caps_Lock ],
+        actions[Group1] = [ SetMods(modifiers = Super), LockMods(modifiers = Lock) ]
+    };
+    modifier_map Mod4 { <CAPS> };
+};
+
